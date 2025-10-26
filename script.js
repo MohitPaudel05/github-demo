@@ -52,13 +52,19 @@ const roasts = {
 
 // State
 let selectedCategory = "random";
-let roastCount = 0;
 let lastRoast = "";
+
+// Load saved roast count from localStorage or start at 0
+let roastCount = parseInt(localStorage.getItem('roastCount')) || 0;
 
 // Elements
 const friendNameInput = document.getElementById("friendName");
 const roastBtn = document.getElementById("roastBtn");
 const roastText = document.getElementById("roastText");
+const roastCounter = document.getElementById("roastCounter");
+
+// Initialize counter display
+roastCounter.textContent = roastCount;
 const roastCountDisplay = document.getElementById("roastCount");
 const shareBtn = document.getElementById("shareBtn");
 const categoryButtons = document.querySelectorAll(".category-btn");
@@ -115,9 +121,10 @@ function generateRoast() {
     roastText.style.transition = "opacity 0.5s";
   }, 200);
 
-  // Update count
+  // Update count and save to localStorage
   roastCount++;
-  roastCountDisplay.textContent = roastCount;
+  localStorage.setItem('roastCount', roastCount);
+  roastCounter.textContent = roastCount;
 
   // Show share button
   shareBtn.style.display = "block";
