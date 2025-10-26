@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Friend Roast Generator 🔥</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🔥 Friend Roast Generator 🔥</h1>
+        <p class="subtitle">
+          For when friendship means keeping egos in check
+        </p>
+      </header>
+
+      <div class="input-section">
+        <label for="friendName">Enter your friend's name:</label>
+        <input type="text" id="friendName" placeholder="e.g., Alex" />
+      </div>
+
+      <div class="category-section">
+        <label>Choose a roast category:</label>
+        <div class="category-buttons">
+          <button class="category-btn" data-category="general">
+            General
+          </button>
+          <button class="category-btn" data-category="personality">
+            Personality
+          </button>
+          <button class="category-btn" data-category="habits">
+            Habits
+          </button>
+          <button class="category-btn" data-category="style">
+            Style
+          </button>
+          <button class="category-btn" data-category="random">
+            Random
+          </button>
+        </div>
+      </div>
+
+      <button id="roastBtn" class="roast-button">
+        Generate Roast 🔥
+      </button>
+
+      <div class="roast-display" id="roastDisplay">
+        <p id="roastText">Click the button to roast your friend!</p>
+      </div>
+
+      <div class="stats">
+        <p>Roasts Generated: <span id="roastCount">0</span></p>
+      </div>
+
+      <button
+        id="shareBtn"
+        class="share-button"
+        style="display: none">
+        Share Roast 📱
+      </button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
